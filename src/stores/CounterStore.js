@@ -12,10 +12,15 @@ class CounterStore {
   increment() {
     this._count++;
   }
+
+  decrement() {
+    this._count--;
+  }
 }
 
 export default decorate(CounterStore, {
   _count: observable,
   counter: computed,
   increment: action,
+  decrement: action,
 });

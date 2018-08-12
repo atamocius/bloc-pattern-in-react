@@ -5,17 +5,16 @@ import StreamBuilder from '../utils/StreamBuilder';
 
 const BlocCounter = ({ bloc }) => (
   <Fragment>
-    <Button onClick={() => bloc.increment.next()}>+</Button>
-    <StreamBuilder
-      initialData={0}
-      stream={bloc.counter}
-      builder={snapshot => (
-        <Label size="large" color="olive">
-          Count:
-          <Label.Detail>{snapshot}</Label.Detail>
-        </Label>
-      )}
-    />
+    <Button onClick={() => bloc.increment()}>+</Button>
+    <Button onClick={() => bloc.decrement()}>-</Button>
+    <Label size="large" color="olive">
+      Count:
+      <StreamBuilder
+        initialData={0}
+        stream={bloc.counter}
+        builder={snapshot => <Label.Detail>{snapshot.data}</Label.Detail>}
+      />
+    </Label>
   </Fragment>
 );
 

@@ -13,7 +13,7 @@ class RxCounter extends Component {
 
     this._subject = new Subject();
 
-    this._subject.pipe(scan(count => count + 1, 0)).subscribe(count => {
+    this._subject.pipe(scan((count, v) => count + v, 0)).subscribe(count => {
       this.setState({
         count,
       });
@@ -23,7 +23,8 @@ class RxCounter extends Component {
   render() {
     return (
       <Fragment>
-        <Button onClick={() => this._subject.next()}>+</Button>
+        <Button onClick={() => this._subject.next(1)}>+</Button>
+        <Button onClick={() => this._subject.next(-1)}>-</Button>
         <Label size="large" color="yellow">
           Count:
           <Label.Detail>{this.state.count}</Label.Detail>

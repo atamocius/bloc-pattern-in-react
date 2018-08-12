@@ -14,6 +14,7 @@ class Counter extends Component {
     return (
       <Fragment>
         <Button onClick={() => this._increment()}>+</Button>
+        <Button onClick={() => this._decrement()}>-</Button>
         <Label size="large" color="red">
           Count:
           <Label.Detail>{this.state.count}</Label.Detail>
@@ -26,6 +27,14 @@ class Counter extends Component {
     this.setState(prevState => {
       return {
         count: prevState.count + 1,
+      };
+    });
+  }
+
+  _decrement() {
+    this.setState(prevState => {
+      return {
+        count: prevState.count - 1,
       };
     });
   }

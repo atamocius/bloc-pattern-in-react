@@ -13,6 +13,10 @@ const store = new CounterStore();
 const bloc = new CounterBloc();
 
 class App extends Component {
+  componentWillUnmount() {
+    bloc.dispose();
+  }
+
   render() {
     return (
       <Container style={{ marginTop: '1em' }}>
