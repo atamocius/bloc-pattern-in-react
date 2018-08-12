@@ -32,4 +32,5 @@ This demo is intended to show how the _BLoC pattern_ (a pattern specifically for
 ## Notes
 
 - The implementation of `StreamBuilder` and `AsyncSnapshot` are just approximations and have only been partially implemented just to satisfy the needed features for the demo.
+- Most of the BLoC demos out there show that the `Sink` is exposed as public. I'm not entirely sold on the idea of exposing it; I think `add()` (`next()` in _RxJS_) should be called as an _action_, similar to how `MobX` specifically tags methods that mutate the state as `action`s. This ensures that the operations being done on the stream are encapsulated and are explicitly labeled (ie. `increment()`, `decrement()`)
 - Inspiration: [Brian Egan - Build a Reactive Flutter App!](https://www.youtube.com/watch?v=As6sFqpIwII)
