@@ -2,6 +2,20 @@
 
 A demo application showing a sample implementation of the BLoC pattern in React.
 
+## How to run
+
+### Install dependencies
+
+```cmd
+yarn
+```
+
+### Start the application
+
+```cmd
+yarn start
+```
+
 ## Setup
 
 A _Counter_ component's state is implemented in 4 different ways:
