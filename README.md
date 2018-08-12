@@ -28,3 +28,8 @@ A _Counter_ component's state is implemented in 4 different ways:
 ## Intention
 
 This demo is intended to show how the _BLoC pattern_ (a pattern specifically for Flutter) differs from other methods. The syntax of Dart can be a bit hard to understand due to the syntax noise (as compared to JSX), so implementing it in React might allow for a different perspective in understanding the BLoC pattern.
+
+## Notes
+
+- The implementation of `StreamBuilder` and `AsyncSnapshot` are just approximations and have only been partially implemented just to satisfy the needed features for the demo.
+- Inspiration: [Brian Egan - Build a Reactive Flutter App!](https://www.youtube.com/watch?v=As6sFqpIwII)
